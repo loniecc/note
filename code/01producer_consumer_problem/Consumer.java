@@ -12,7 +12,6 @@ public class Consumer implements Runnable {
     }
 
     public void run() {
-        int index = 1;
         while (true) {
             try {
                 List<String> pro = container.get();

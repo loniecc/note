@@ -10,8 +10,6 @@ public class ContainerBatchAwait {
      */
     private Condition notFull = lock.newCondition();
 
-    private Condition notEmpty = lock.newCondition();
-
     int maxCap = 2;
     int curCap = 0;
 
@@ -73,7 +71,6 @@ public class ContainerBatchAwait {
         }
 
         public void run() {
-            int index = 0;
             while (true) {
                 try {
                     container.get(name);
